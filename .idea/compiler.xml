@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mcp-java-server" />
+        <module name="config-service" />
+        <module name="customer-service" />
+        <module name="eureka-registry-service" />
+        <module name="delivered-query-service" />
+        <module name="notification-service" />
+        <module name="delivered-command-service" />
+        <module name="billing-service" />
+        <module name="base-domaine-service" />
+        <module name="mcp-java-client" />
+        <module name="inventory-service" />
+        <module name="payment-service" />
+        <module name="api-gateway-service" />
+        <module name="order-service" />
+        <module name="shipping-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="inventory-service (1)" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway-service" options="" />
+      <module name="base-domaine-service" options="" />
+      <module name="billing-service" options="" />
+      <module name="config-service" options="" />
+      <module name="customer-service" options="" />
+      <module name="delivered-command-service" options="" />
+      <module name="delivered-query-service" options="" />
+      <module name="eureka-registry-service" options="" />
+      <module name="inventory-service" options="" />
+      <module name="inventory-service (1)" options="-parameters" />
+      <module name="mcp-java-client" options="-parameters" />
+      <module name="notification-service" options="" />
+      <module name="order-service" options="" />
+      <module name="payment-service" options="" />
+      <module name="shipping-service" options="" />
+    </option>
+  </component>
+</project>

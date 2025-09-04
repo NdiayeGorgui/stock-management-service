@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://stock-web-app:4200"         # Pour Angular dans le conteneur
+              - "http://stock-web-app-react:4300"   # Pour React dans le conteneur
+              - "http://localhost:4200"
+              - "http://localhost:4300"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - OPTIONS
+            allowCredentials: true
+      routes:
+        - id: notification-service-custom
+          uri: lb://NOTIFICATION-SERVICE
+          predicates:
+            - Path=/notification-service/api/v1/notifications/**
