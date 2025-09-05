@@ -22,7 +22,6 @@ public class Payment {
     private String orderId;
     private String customerName;
     private String customerMail;
-    private double amount;
     private LocalDateTime timeStamp;
     private String paymentStatus;
 

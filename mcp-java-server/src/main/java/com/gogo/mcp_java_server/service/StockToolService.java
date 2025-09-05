@@ -50,7 +50,7 @@ public class StockToolService {
 
     public List<PaymentDto> getAllPayments() {
         return stockService.getAllPayments().stream()
-                .map(s -> new PaymentDto(s.getPaymentId(), s.getCustomerId(), s.getOrderId(), s.getCustomerName(), s.getCustomerMail(), s.getAmount(),s.getTimeStamp(), s.getPaymentStatus()))
+                .map(s -> new PaymentDto(s.getPaymentId(), s.getCustomerId(), s.getOrderId(), s.getCustomerName(), s.getCustomerMail(), s.getTimeStamp(), s.getPaymentStatus()))
                 .toList();
     }
 }

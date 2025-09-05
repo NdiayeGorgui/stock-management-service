@@ -7,7 +7,6 @@ public record PaymentDto(String paymentId,
                          String orderId,
                          String customerName,
                          String customerMail,
-                         double amount,
                          LocalDateTime timeStamp,
                          String paymentStatus) {
 }
