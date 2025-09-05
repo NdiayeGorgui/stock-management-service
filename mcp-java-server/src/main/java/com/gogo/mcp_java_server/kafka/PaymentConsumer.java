@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 public class PaymentConsumer {
 
@@ -33,6 +35,7 @@ public class PaymentConsumer {
            payment.setCustomerId(event.getCustomerEventDto().getCustomerIdEvent());
            payment.setCustomerName(event.getCustomerEventDto().getName());
            payment.setCustomerMail(event.getCustomerEventDto().getEmail());
+           payment.setTimeStamp(LocalDateTime.now());
            payment.setPaymentStatus(EventStatus.COMPLETED.name());
 
             paymentRepository.save(payment);

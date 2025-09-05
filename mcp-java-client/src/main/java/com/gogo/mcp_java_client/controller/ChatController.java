@@ -6,6 +6,7 @@ import reactor.core.publisher.Flux;
 
 @RequestMapping("/api/v1")
 @RestController
+@CrossOrigin("*")
 public class ChatController {
     private final MyAIAgent agent;
 
