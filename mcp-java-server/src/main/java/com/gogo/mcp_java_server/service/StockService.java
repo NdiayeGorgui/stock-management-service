@@ -8,6 +8,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
 @EnableScheduling
 @Service
 public class StockService {
@@ -115,5 +117,24 @@ public class StockService {
     public void updateProductQty(String productIdEvent, int qty ){
         productRepository.updateQuantity(productIdEvent, qty);
 
+    }
+
+    public void saveOrder(Order order) {
+        orderRepository.save(order);
+    }
+
+    public List<Order> findByCustomer(String customerId){
+        List<Order> customerOrders=orderRepository.findByCustomerId(customerId);
+        return customerOrders.stream()
+                .filter(order -> order.getCustomerId().equalsIgnoreCase(customerId))
+                .collect(Collectors.toList());
+    }
+
+    public List<Bill> billList(String customerId,String status){
+        return billRepository.findByCustomerIdAndStatus(customerId,status);
+    }
+
+    public void savePayment(Payment payment) {
+        paymentRepository.save(payment);
     }
 }
