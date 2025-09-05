@@ -23,8 +23,8 @@ public class MyAIAgent {
     public  Flux<String> prompt(String question) {
         return chatClient.prompt()
                 .system("Use markdown style when you answer." +
-                        " Si on te pose une question sur le mode de payment, réponds ceci: " +
-                        "Veuillez consulter la liste de payments pour connaitre le mode de payment")
+                        " And If you are asked about the payment method, answer this: " +
+                        "Please refer to the payment list for the payment method.")
                 .user(question).stream().content();
     }
 }
