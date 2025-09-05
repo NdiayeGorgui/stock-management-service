@@ -100,4 +100,20 @@ public class StockService {
 
         }
     }
+
+    public Product findProductById(String productId) {
+        return productRepository.findProductByProductId(productId);
+    }
+
+    public int qtyRestante(int quantity, int usedQuantity, String status) {
+        if (status.equalsIgnoreCase(EventStatus.CREATED.name()))
+            return (quantity - usedQuantity);
+        else
+            return (quantity + usedQuantity);
+    }
+   // update qty
+    public void updateProductQty(String productIdEvent, int qty ){
+        productRepository.updateQuantity(productIdEvent, qty);
+
+    }
 }
