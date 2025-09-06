@@ -22,7 +22,7 @@ public class MyAIAgent {
     }
     public  Flux<String> prompt(String question) {
      String calcul = """
-             Voici comment le montant est calculé:
+             Voici comment le montant ($) est calculé:
              itemDto.setQuantity(item.getQuantity());
                                      itemDto.setPrice(item.getPrice());
                                      itemDto.setDiscount(item.getDiscount());
@@ -55,8 +55,6 @@ public class MyAIAgent {
              
                          double amount = (subtotal - totalDiscount) + totalTax;
                          amount = Math.round(amount * 100.0) / 100.0;
-             
-             
              
                          // Affecter les valeurs
                          dto.setItems(itemDtos);
